@@ -1,0 +1,54 @@
+//Hola profe, buenas noches, oiga como aclaración le comento que en la linea 28 me marca un error en el primer paréntesis.
+//Y la verdad desconozo si es error de mi computadora o de mi sintaxis y como ya no lo pude ejeutar, lo mando así, gracias.
+#include <iostream>
+#include<stdlib.h>
+using namespace std;
+
+class Juguete{
+    private:
+        string material;
+        string pintura; 
+    public:
+        Juguete(string,string);
+        void mostrarJuguete();
+};
+
+class Mafex : public Juguete{
+    private:
+        string articulacion;
+        string esculpido;
+    public:
+    Mafex(string,string,string,string);
+    void mostrarMafex();
+};
+
+Juguete::Juguete(string _material,string _pintura){
+    material = _material;
+    pintura = _pintura;
+}
+
+Mafex::Mafex(string_material,string_pintura,string_articulacion,string_esculpido) : Juguete(_material,_pintura){
+    articulacion = _articulacion;
+    esculpido = _esculpido;
+}
+
+void Mafex::mostrarMafex(){
+    mostrarJuguete();
+    cout<<"Articulaciones: "<<articulacion<<endl;
+    cout<<"Esculpido: "<<esculpido<<endl;
+    
+}    
+void Juguete::mostrarJuguete(){
+    cout << "Material: "<<material<<endl;
+    cout << "Pintura: "<<pintura<<endl;
+}
+
+
+int main()
+{
+    Mafex m1("Vinil","Acrilico","Moviles","Detallado");
+    
+    m1.mostrarMafex();
+
+    return 0;
+}
